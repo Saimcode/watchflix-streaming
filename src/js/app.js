@@ -1,7 +1,7 @@
 window.onload = function () {
 	const searchForm = document.getElementById("searchForm");
 	const searchBar = document.getElementById("searchBar");
-	const API_KEY = ``;
+	const API_KEY = `5214a2ae`;
 
 
 	let filters = [
