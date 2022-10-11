@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+// Basics
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+// body {
+//     background-image: url('../img/test-2.png');
+//     background-size: 40%;
+//     background-position: center 7%;
+//     background-repeat: no-repeat;
+
+//     @media screen and (min-width: 600px) {
+//         background-size: 70%;
+//         background-position: center 7%;
+//     }
+
+//     @media screen and (min-width: 900px) {
+//         background-size: 50%;
+//         background-position: center 7%;
+//     }
+
+//     @media screen and (min-width: 1200px) {
+//         background-size: 40%;
+//         background-position: center 7%;
+//     }
+
+//     @media screen and (min-width: 1400px) {
+//         background-size: 35%;
+//         background-position: center 7%;
+//     }
+
+//     @media screen and (min-width: 1700px) {
+//         background-size: 25%;
+//         background-position: center 7%;
+//     }
+// }
+
+ul,
+li {
+    list-style: none;
+}
+
+.section, header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 50px 20px;
+
+    @media screen and (max-width: 1440px) {
+        padding: 40px 20px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+    color: white;
+}
+
+.bx-search-alt-2, .gradient-bg {
+    background: -webkit-linear-gradient(135.87deg, #0FEFFD 0%, #ff49f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+.gradient-hover-effect:hover {
+    background: -webkit-linear-gradient(135.87deg, #0FEFFD 0%, #ff49f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.movie-card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent);
+    border-radius: 7.5px;
+}
+
+.watch-now-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    height: 50px;
+
+    padding: 15px 20px;
+    background: transparent;
+    border-radius: 999px;
+    border: 1.5px solid white;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    color: #fff;
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background: #0FEFFD;
+    }
+}
+
+.filter-btn.active {
+    background: #c084fc !important;
+}
+
+.movie-details {
+    transition: 0.5s ease-in-out;
+}
+
+.movie-card:hover .watch-now-btn-2 {
+    display: flex;
+    transition: 0.5s ease-in-out;
+}
+
+input {
+
+    &:-internal-autofill-selected {
+        background: rgb(82 82 82) !important;
+    }
+
+    &:-autofill {
+        background: rgb(82 82 82) !important;
+    }
+
+    &:-webkit-autofill {
+        background: rgb(82 82 82) !important;
+    }
+
+}
+
+
+// Dark Theme Elements 
+
+.dark {
+    
+    // body {
+    //     background-image: url('../img/test.png');
+    // }
+
+    
+.movie-card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    border-radius: 7.5px;
+
+}
+}
