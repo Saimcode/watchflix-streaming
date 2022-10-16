@@ -112,28 +112,18 @@ window.onload = function () {
 		updateType("SearchMovie");
 		document.querySelector("#fm").classList.toggle('active')
 		document.querySelector("#fs").classList.remove('active')
-		document.querySelector("#fg").classList.remove('active')
 		document.querySelector("#fclear").classList.remove('active')
 	})
 	document.querySelector("#fs").addEventListener("click", () => {
 		updateType("SearchSeries");
 		document.querySelector("#fm").classList.remove('active')
 		document.querySelector("#fs").classList.toggle('active')
-		document.querySelector("#fg").classList.remove('active')
-		document.querySelector("#fclear").classList.remove('active')
-	})
-	document.querySelector("#fg").addEventListener("click", () => {
-		updateType("game");
-		document.querySelector("#fm").classList.remove('active')
-		document.querySelector("#fs").classList.remove('active')
-		document.querySelector("#fg").classList.toggle('active')
 		document.querySelector("#fclear").classList.remove('active')
 	})
 	document.querySelector("#fclear").addEventListener("click", () => {
 		updateType("SearchTitle");
 		document.querySelector("#fm").classList.remove('active')
 		document.querySelector("#fs").classList.remove('active')
-		document.querySelector("#fg").classList.remove('active')
 	})
 
 	
