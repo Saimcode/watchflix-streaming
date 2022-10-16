@@ -1,8 +1,8 @@
 window.onload = function () {
 	const searchForm = document.getElementById("searchForm");
 	const searchBar = document.getElementById("searchBar");
-	const API_KEY = `5214a2ae`;
-
+	const API_KEY = `k_t093su5o`;
+	// k_t093su5o
 
 	let filters = [
 		search = "",
@@ -11,13 +11,13 @@ window.onload = function () {
 
 	// Fetching the data from API
 	async function fetchData() {
-		let url = `http://www.omdbapi.com/?apikey=${API_KEY}`;
+		let url = `https://imdb-api.com/en/API/SearchTitle/${API_KEY}`;
 
 		if (filters.search) {
-			url += `&s=${filters.search}`
+			url = `https://imdb-api.com/en/API/SearchTitle/${API_KEY}/${filters.search}`
 		}
 		if (filters.type) {
-			url += `&type=${filters.type}`
+			url = `https://imdb-api.com/en/API/${filters.type}/${API_KEY}/${filters.search}`
 		}
 
 		return getMovies(url);
@@ -29,9 +29,9 @@ window.onload = function () {
 	}
 	async function updateSearchResults() {
 		const data = await fetchData();
-		console.log(data.Search)
+		console.log(data.results)
 
-		movieSearchResults(data.Search);
+		movieSearchResults(data.results);
 	}
 	updateSearchResults();
 
@@ -47,14 +47,11 @@ window.onload = function () {
 			movieDisplay += `
 				<li class="movie-card flex flex-col justify-center items-start relative w-full max-w-[300px] max-h-[400px] rounded-lg mx-auto shadow-movieCard" id="cards">
 
-					<img src=${item.Poster === "N/A" || item.Poster === "" || item.Poster === null ? 
-					item.Poster = "https://i.ibb.co/h7Q936c/no-image-available.jpg" 
-					: item.Poster} alt=${item.Title} class="movie-img block mx-auto w-full bg-cover h-full rounded-lg" id="movieImg">
+					<img src=${item.image === "N/A" || item.image === "" || item.image === null ? 
+					item.image = "https://i.ibb.co/h7Q936c/no-image-available.jpg" 
+					: item.image} alt=${item.title} class="movie-img block mx-auto w-full bg-cover h-full rounded-lg" id="movieImg">
 
 					<div class="movie-details flex flex-col justify-center items-start gap-2 absolute bottom-[0%] z-10 p-5 duration-100 ease-in-out">
-						<p class="movie-tag px-2 py-1 text-[14px] text-primary-teal bg-primary-bg50 rounded-md capitalize" id="movieGenre">
-						${item.Type}
-						</p>
 						<div class="movie-rating ">
 							<i class='bx bxs-star text-yellow-300'></i>
 							<i class='bx bxs-star text-yellow-300'></i>
@@ -62,7 +59,7 @@ window.onload = function () {
 							<i class='bx bxs-star text-yellow-300'></i>
 							<i class='bx bxs-star text-neutral-300'></i>
 						</div>
-						<h2 class="movie-name text-[20px] text-neutral-100 font-semibold" id="movieTitle">${item.Title} (${item.Year})</h2>
+						<h2 class="movie-name text-[20px] text-neutral-100 font-semibold" id="movieTitle">${item.title} ${item.description}</h2>
 						
 						<a href="" class="watch-now-btn-2 hidden relative duration-100 ease-in-out gap-1 text-[14px] flex-row justify-center items-center text-left text-neutral-100">Watch Now <i class='bx bx-chevron-right text-[18px] font-bold'></i></a>
 					</div>
@@ -91,7 +88,7 @@ window.onload = function () {
 		document.querySelector('.hero-sec').classList.remove('hidden');
 		document.querySelector('.hero-sec').classList.add('flex');
 		document.querySelector('.hero-main').classList.add('hidden');
-		document.body.style.backgroundImage = 'url("../img/transparent.png")';
+		document.body.style.backgroundImage = 'url("./src/img/transparent.png")';
 		searchBar.value = "";
 
 	}
@@ -112,14 +109,14 @@ window.onload = function () {
 
 	// Filter Buttons
 	document.querySelector("#fm").addEventListener("click", () => {
-		updateType("movie");
+		updateType("SearchMovie");
 		document.querySelector("#fm").classList.toggle('active')
 		document.querySelector("#fs").classList.remove('active')
 		document.querySelector("#fg").classList.remove('active')
 		document.querySelector("#fclear").classList.remove('active')
 	})
 	document.querySelector("#fs").addEventListener("click", () => {
-		updateType("series");
+		updateType("SearchSeries");
 		document.querySelector("#fm").classList.remove('active')
 		document.querySelector("#fs").classList.toggle('active')
 		document.querySelector("#fg").classList.remove('active')
@@ -133,7 +130,7 @@ window.onload = function () {
 		document.querySelector("#fclear").classList.remove('active')
 	})
 	document.querySelector("#fclear").addEventListener("click", () => {
-		updateType("");
+		updateType("SearchTitle");
 		document.querySelector("#fm").classList.remove('active')
 		document.querySelector("#fs").classList.remove('active')
 		document.querySelector("#fg").classList.remove('active')
