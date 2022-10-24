@@ -102,7 +102,7 @@
 		shows.slice(0, 4).map((item) => {
 
 			showDisplay += `
-			<li class="movie-card flex flex-col justify-center items-start relative w-full max-w-[300px] rounded-lg mx-auto shadow-movieCard"
+			<li class="movie-card flex flex-col justify-center items-start relative h-full w-full max-w-[300px] rounded-lg mx-auto shadow-movieCard"
 			id="topTVsCard">
 
 			<img src=${item.image === "N/A" || item.image === "" || item.image === null ? 
