@@ -26,7 +26,7 @@ A simple website where users can search for a movie and get results from IMDB AP
 ## ❔ Help
 
 Contact me on the links below:
-* [Linkedin](www.linkedin.com/in/saim-q-703060234)
+* [Linkedin](https://www.linkedin.com/in/saim-q-703060234)
 * [Instagram](https://www.instagram.com/_saim.f/)
 
 ## 🛠 Languages & Tools Used
