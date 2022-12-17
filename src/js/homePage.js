@@ -31,7 +31,7 @@
 		movieData.slice(0, 4).map((item) => {
 
 			movieDisplay += `
-			<li class="movie-card flex flex-col justify-center items-start relative w-full max-w-[300px] rounded-lg mx-auto shadow-movieCard"
+			<li class="movie-card flex flex-col justify-center items-start relative h-full w-full max-w-[300px] rounded-lg mx-auto shadow-movieCard"
 			id="topMoviesCard">
 
 			<img src=${item.image === "N/A" || item.image === "" || item.image === null ? 
